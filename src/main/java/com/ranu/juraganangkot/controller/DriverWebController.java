@@ -1,7 +1,7 @@
 package com.ranu.juraganangkot.controller;
 
-import com.ranu.juraganangkot.entity.Student;
-import com.ranu.juraganangkot.service.framework.StudentService;
+import com.ranu.juraganangkot.entity.Driver;
+import com.ranu.juraganangkot.service.framework.DriverService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,36 +11,36 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 @AllArgsConstructor
-public class StudentWebController {
-    private StudentService studentService;
+public class DriverWebController {
+    private DriverService driverService;
 
     @GetMapping("/")
     public String index(Model model) {
-        model.addAttribute("student", studentService.getAllStudents());
+        model.addAttribute("driver", driverService.getAllDrivers());
         return "index";
     }
 
     @GetMapping(value = "/create")
     public String create1(Model model) {
-        model.addAttribute("student", new Student());
-        return "formStudent";
+        model.addAttribute("driver", new Driver());
+        return "formDriver";
     }
 
     @PostMapping(value = "/create")
-    public String tambahStudent(Model model, Student student) {
-        model.addAttribute("student", studentService.save(student));
+    public String tambahDriver(Model model, Driver driver) {
+        model.addAttribute("driver", driverService.save(driver));
         return "redirect:/";
     }
 
     @GetMapping(value = "/edit/{id}")
     public String editForm(@PathVariable Long id, Model model) {
-        model.addAttribute("student", studentService.findById(id));
-        return "formStudent";
+        model.addAttribute("driver", driverService.findById(id));
+        return "formDriver";
     }
 
     @GetMapping(value = "/hapus/{id}")
-    public String hapusStudent(@PathVariable Long id) {
-        studentService.deleteById(id);
+    public String hapusDriver(@PathVariable Long id) {
+        driverService.deleteById(id);
         return "redirect:/";
     }
 }

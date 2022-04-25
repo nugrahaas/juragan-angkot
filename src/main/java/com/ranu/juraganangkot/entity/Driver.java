@@ -11,19 +11,19 @@ import javax.validation.constraints.NotEmpty;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "student")
-public class Student {
+@Table(name = "driver")
+public class Driver {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotEmpty(message = "First name is required")
-    @Column(nullable = false, name = "firstName")
-    private String firstName;
+    @NotEmpty(message = "name is required")
+    @Column(nullable = false, name = "name")
+    private String driver_name;
 
-    @NotEmpty(message = "Last name is required")
-    @Column(nullable = false, name = "lastName")
-    private String lastName;
+    @NotEmpty(message = "name is required")
+    @Column(nullable = false, name = "username")
+    private String driver_username;
 
     @NotEmpty(message = "email is required")
     @Column(nullable = false, name = "email", unique = true)
@@ -31,10 +31,10 @@ public class Student {
 
     @NotEmpty(message = "Phone number is required")
     @Column(nullable = false, unique = true)
-    private String phone;
+    private String driver_phone;
 
-    @NotEmpty(message = "Jurusan is required")
-    @Column(nullable = false, unique = true)
-    private String jurusan;
+    @NotEmpty(message = "behaviour is required")
+    @Column(nullable = false)
+    private String behaviour;
 
 }
