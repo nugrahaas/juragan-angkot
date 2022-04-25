@@ -43,7 +43,7 @@ public class SignupController {
     }
 
     @PostMapping
-    public String saveUser(@Valid @ModelAttribute("user") User user,
+    public String saveUser(@Valid @ModelAttribute("users") User user,
                            BindingResult result,
                            Model model,
                            RedirectAttributes attributes) {
@@ -63,7 +63,7 @@ public class SignupController {
         return "redirect:/signup";
     }
 
-    @ModelAttribute("user")
+    @ModelAttribute("users")
     public User user() {
         return new User();
     }
