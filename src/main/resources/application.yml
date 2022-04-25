@@ -2,9 +2,9 @@ server:
   port: 8080
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Jakarta&useSSL=false
-    username: postgres
-    password: root
+    url: jdbc:postgresql://ec2-54-80-122-11.compute-1.amazonaws.com:5432/d6i8jvuopfcl55?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Jakarta&useSSL=false
+    username: savdrsaskmzzmq
+    password: 0c542f52dcf66b136eb12be55d3beaec7b0a6dbdf33dba15e12a7ac6e106518b
   jpa:
     hibernate:
       ddl-auto: update
